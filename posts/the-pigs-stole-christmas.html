@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Pigs Stole Christmas — Flyer</title>
+  <meta name="description" content="Flyer's pitch for the Albert Christmas campaign 2026.">
+  <link rel="icon" href="../assets/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Marcellus&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="../"><img src="../assets/logo.png" alt=""><span>Flyer</span></a>
+      <nav>
+        <a href="hello-we-are-flyer.html">About</a>
+        <a href="the-pigs-stole-christmas.html">Work</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <article>
+      <header>
+        <p class="kicker">Flyer · Pitch</p>
+        <h1>The Pigs Stole Christmas</h1>
+        <p class="lede">Albert Christmas campaign 2026.</p>
+        <p class="post-meta"><time datetime="2026-10-15">15 October 2026</time></p>
+      </header>
+
+      <!-- SLIDES: upload the exported deck as presentation/flyer-albert-christmas-2026.pdf and it appears here automatically. -->
+      <section class="deck" id="deck">
+        <div class="placeholder">The presentation will be published here.</div>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <span>© 2026 Flyer</span>
+      <span>Ideas that land.</span>
+    </div>
+  </footer>
+
+  <script>
+    // Show the deck if the PDF has been uploaded; otherwise keep the placeholder.
+    (function () {
+      var src = "../presentation/flyer-albert-christmas-2026.pdf";
+      fetch(src, { method: "HEAD" }).then(function (r) {
+        if (!r.ok) return;
+        document.getElementById("deck").innerHTML =
+          '<iframe src="' + src + '" title="Flyer — The Pigs Stole Christmas (presentation)"></iframe>' +
+          '<a class="btn" href="' + src + '" target="_blank" rel="noopener">Open the presentation ↗</a>';
+      }).catch(function () {});
+    })();
+  </script>
+</body>
+</html>
